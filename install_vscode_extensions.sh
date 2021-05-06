@@ -1,19 +1,13 @@
 # !/bin/bash
 
 EXTENSION=(
+  equinusocio.vsc-material-theme
   pkief.material-icon-theme
-  ms-vscode.cpptools
-  ms-vscode.csharp
+  vscjava.vscode-java-pack
   ms-vscode.go
-  ionide.ionid-fsharp
-  octref.vetur
   hookyqr.beautify
-  eg2.vscode-npm-script
-  formulahendry.auto-close-tag
-  formulahendry.auto-close-tag
   ionutvmi.path-autocomplete
-  sidthesloth.html5-boilerplate
-  sdras.vue-vscode-snippets
+  ms-azuretools.vscode-docker
 )
 
 for extension in ${EXTENSION[@]}

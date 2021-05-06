@@ -20,6 +20,7 @@ sudo install -o root -g root -m 644 ~/microsoft.gpg /etc/apt/trusted.gpg.d/
 handle_error_vscode
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 handle_error_vscode
+rm -f packages.microsoft.gpg
 
 sudo apt install apt-transport-https
 handle_error_vscode
