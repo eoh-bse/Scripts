@@ -1,4 +1,4 @@
-# !/bin/bash
+#/bin/bash
 
 echo_error_for_failed_command () {
   if [ $? -ne 0 ]; then 
@@ -15,18 +15,6 @@ if [ "$answer" = "y" ]; then
   sudo apt install ttf-mscorefonts-installer
   sudo fc-cache -f -v
   echo_error_for_failed_command "MS Fonts"
-fi
-
-echo "Copy Windows fonts from Windows partition? (y/n)"
-read answer
-
-if [ "$answer" = "y" ]; then
-  sudo mkdir /usr/share/fonts/windows_fonts
-  sudo mount -o ro /dev/sdb4 /media/elbert/windows
-  sudo cp -R /media/elbert/windows/Windows/Fonts/* /usr/share/fonts/windows_fonts/
-  sudo fc-cache -f -v
-  echo_error_for_failed_command "Windows Fonts from Windows partition"
-  sudo umount /dev/sdb4
 fi
 
 echo "Install Mac SanFrancisco Font? (y/n)"
