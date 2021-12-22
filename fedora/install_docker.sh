@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 
 source std_lib.sh
 
