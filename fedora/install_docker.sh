@@ -39,8 +39,10 @@ echo "Moving image storage locations to /home..."
 sudo echo "{ "data-root": "/home/.docker" }" > /etc/docker/daemon.json
 
 sudo systemctl restart docker
-sudo systemctl enable docker
-sudo systemctl restart docker
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+sudo systemctl restart docker.service
+sudo systemctl restart containerd.service
 
 echo "Enter your username that will be using docker command without sudo"
 read username
