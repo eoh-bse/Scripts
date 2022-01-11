@@ -6,17 +6,6 @@ echo_error_for_failed_command () {
   fi
 }
 
-echo "Authorize to install the following fonts: MS Fonts, Fonts from Windows on this machine and Mac's San Francisco Fonts"
-
-echo "Install MS Fonts? (y/n)"
-read answer
-
-if [ "$answer" = "y" ]; then
-  sudo apt install ttf-mscorefonts-installer
-  sudo fc-cache -f -v
-  echo_error_for_failed_command "MS Fonts"
-fi
-
 echo "Install Mac SanFrancisco Font? (y/n)"
 read answer
 
@@ -27,3 +16,19 @@ if [ "$answer" = "y" ]; then
   sudo fc-cache -f -v
   echo_error_for_failed_command "San Francisco Fonts"
 fi
+
+echo "Install Hack font? (y/n)"
+read answer
+
+if [ $answer = "y" ]; then
+  echo "Enter version: "
+  read hack_version
+
+  hack_zip_file=Hack-v$hack_version-ttf.zip
+  wget https://github.com/source-foundry/Hack/releases/download/v$hack_version/$hack_zip_file
+  unzip $hack_zip_file
+  mv ttf hack
+  sudo mv hack /usr/share/fonts/
+  sudo fc-cache -f -v
+fi
+ 
