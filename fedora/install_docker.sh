@@ -36,17 +36,19 @@ echo "Successfully installed docker-compose"
 
 echo "Moving image storage locations to /home..."
 
-sudo echo "{ "data-root": "/home/.docker" }" > /etc/docker/daemon.json
-
-sudo systemctl restart docker
+sudo systemctl stop docker.service
+sudo systemctl stop containerd.service
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+sudo -i
+sudo echo '{ "data-root": "/home/.docker" }' > /etc/docker/daemon.json
+
 sudo systemctl restart docker.service
 sudo systemctl restart containerd.service
 
 echo "Enter your username that will be using docker command without sudo"
 read username
 
-sudo groupadd docker
 sudo usermod -aG docker $username
 newgrp docker

@@ -1,9 +1,11 @@
 #!/bin/bash
 
-wget https://zoom.us/client/latest/zoom_x86_64.rpm
+install_file=zoom_x86_64.rpm
 
-sudo dnf localinstall zoom_x86_64.rpm
+wget https://zoom.us/client/latest/$install_file
 
-rm zoom_x86_64,rpm
+sudo dnf localinstall $install_file
+
+rm $install_file
 
 echo "Successfully installed Zoom"
