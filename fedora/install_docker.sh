@@ -2,6 +2,11 @@
 
 source std_lib.sh
 
+if [ $EUID -ne 0 ]; then
+  print_msg "Please run this script as root"
+  exit 1
+fi
+
 echo -e "${YELLOW}Authorize docker installation...${NO_COLOR}"
 
 echo "Removing any old versions of docker..."
@@ -41,7 +46,6 @@ sudo systemctl stop containerd.service
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
-sudo -i
 sudo echo '{ "data-root": "/home/.docker" }' > /etc/docker/daemon.json
 
 sudo systemctl restart docker.service

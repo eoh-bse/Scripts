@@ -15,9 +15,9 @@ wget "https://golang.org/dl/$go_tarball"
 
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $go_tarball
 
-export PATH=$PATH:/usr/local/go/bin
+echo "export PATH=$PATH:/usr/local/go/bin >> ~/.bashrc"
 
-source ~/.profile
+source ~/.bashrc
 
 go version
 

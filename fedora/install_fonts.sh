@@ -30,5 +30,6 @@ if [ $answer = "y" ]; then
   mv ttf hack
   sudo mv hack /usr/share/fonts/
   sudo fc-cache -f -v
+  rm $hack_zip_file
 fi
  
