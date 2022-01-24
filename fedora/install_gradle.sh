@@ -12,7 +12,7 @@ sudo mv $file /usr/local/gradle
 
 rm $zipfile
 
-echo "export PATH=/usr/local/gradle/bin:$PATH" >> ~/.bashrc
+echo "export PATH=\$PATH:/usr/local/gradle/bin" >> ~/.bashrc
 source ~/.bashrc
 
 echo "Successfully installed Gradle $version"

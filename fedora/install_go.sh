@@ -15,7 +15,7 @@ wget "https://golang.org/dl/$go_tarball"
 
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $go_tarball
 
-echo "export PATH=$PATH:/usr/local/go/bin >> ~/.bashrc"
+echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
 
 source ~/.bashrc
 
@@ -24,3 +24,4 @@ go version
 rm -f $go_tarball
 
 echo "Go $go_version has successfully been installed."
+echo "Please restart the terminal to have go command at your disposal"
