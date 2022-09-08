@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 EXTENSIONS=(
   equinusocio.vsc-community-material-theme

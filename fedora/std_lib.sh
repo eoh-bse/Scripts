@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 NO_COLOR="\e[39m"
 BLACK="\e[30m"

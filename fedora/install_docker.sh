@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source std_lib.sh
 
@@ -56,3 +56,6 @@ read username
 
 sudo usermod -aG docker $username
 newgrp docker
+
+echo "Installing docker-compose..."
+sudo dnf install docker-compose

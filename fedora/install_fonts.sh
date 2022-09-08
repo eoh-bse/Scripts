@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo_error_for_failed_command () {
   if [ $? -ne 0 ]; then
@@ -32,4 +32,4 @@ if [ $answer = "y" ]; then
   sudo fc-cache -f -v
   rm $hack_zip_file
 fi
- 
+
