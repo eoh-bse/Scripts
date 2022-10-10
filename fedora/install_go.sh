@@ -20,11 +20,10 @@ if grep -q $go_path "~/.bashrc"; then
     echo "export PATH=\$PATH:$go_path" >> ~/.bashrc
 fi
 
-source ~/.bashrc
+source $HOME/.bashrc
 
 go version
 
 rm -f $go_tarball
 
 echo "Go $go_version has successfully been installed."
-echo "Please restart the terminal to have go command at your disposal"
