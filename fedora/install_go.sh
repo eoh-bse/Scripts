@@ -2,7 +2,6 @@
 
 set -e
 
-
 echo "Enter go version to install:"
 
 read go_version
@@ -17,7 +16,7 @@ wget "https://golang.org/dl/$go_tarball"
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $go_tarball
 
 if grep -q $go_path "~/.bashrc"; then
-    echo "export PATH=\$PATH:$go_path" >> ~/.bashrc
+    echo "export PATH=\$PATH:$go_path" >> $HOME/.bashrc
 fi
 
 source $HOME/.bashrc
